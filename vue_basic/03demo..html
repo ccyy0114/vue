@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h3>v-on:keyup.13 触发回车事件</h3>  
+			<p>v-model是双向绑定</v-modle></p>
+			<u1>
+				<li>修改v-modle中msg.data中的mag会被修改</li>
+				<li>修改data中msg,v-modle中ms g会被修改</li>
+			</u1>
+			<input v-model="msg" v-on:keyup.13="on_enter"/>
+
+
+
+
+
+			<p>{{msg}}</p>
+		</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				msg:""
+			},
+			methods:{ 
+				on_enter:function(){
+					console.log(vm.msg)
+				}
+
+				}
+			});
+	</script>
+	 
+</html>
