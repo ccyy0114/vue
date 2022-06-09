@@ -22,7 +22,8 @@
         var vue=new Vue({
             el:"#box",
             data:{
-                number:0
+                number:0,
+                name:"yxy"
             },
             methods:{
                 add:function(){
@@ -34,8 +35,15 @@
             },
             //侦听器
             watch:{
-                number:function(val){
-                    console.log("监测到number的值发生了变化",val)
+                number:function(value){
+                    console.log("监测到number的值发生了变化",value)
+                    if (value<0){
+                        alert("数量不能少于0")
+                        this.number=0
+                    }
+                },
+                name:function(value){
+                    console.log("监测到name的值发生了变化",value)
                 }
             }
         })
