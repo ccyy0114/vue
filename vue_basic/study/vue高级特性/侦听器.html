@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="/vue_basic/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div id="box">
+        数量：
+        <button type="button" @click="sub()">-</button>
+        <input type="text" :value="number">
+        <button type="button" v-on:click="add()">+</button>
+    </div>
+    <script type="text/javascript">
+        /**
+         * 侦听器：监测属性的值有没有发生变化
+         */
+
+        var vue=new Vue({
+            el:"#box",
+            data:{
+                number:0,
+                name:"yxy"
+            },
+            methods:{
+                add:function(){
+                    this.number++
+                },
+                sub(){
+                    this.number--
+                }
+            },
+            //侦听器
+            watch:{
+                number:function(value){
+                    console.log("监测到number的值发生了变化",value)
+                    if (value<0){
+                        alert("数量不能少于0")
+                        this.number=0
+                    }
+                },
+                name:function(value){
+                    console.log("监测到name的值发生了变化",value)
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
