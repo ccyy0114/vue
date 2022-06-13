@@ -8,51 +8,6 @@
     <script src="https://unpkg.com/axios/dist/axios"></script>
 </head>
 <body>
-    <script type="text/javascript">
-        //使用axios发送一个get请求
-        //正确的
-        // const pro=axios.get('http://127.0.0.1:5000/api/projects')
-        //错误的
-        // const pro=axios.get('http://127.0.0.1:5000/api/projects11111')
-        // console.log(pro)
-        //-----------获取接口返回的数据(请求成功)-------------------
-        // pro.then(function(response){
-        //     //这个回调函数的中的response才是接口返回的响应对象
-        //     console.log('接口的响应数据：',response)
-        //     //获取响应体 
-        //     console.log(response.data)
-        //     //获取响应的状态码
-        //     console.log(response.status)
-
-        // })
-        //-----------获取接口返回的数据(请求失败，返回的状态码4，5 系列的)-------------------
-        // pro.catch(function(error){
-        //     console.log(error.response)
-        //     let response =error.response
-        //     console.log(response.data)
-        //     console.log(response.headers)
-        // }) 
-        
-        //自定义http状态码错误的范围
-        const pro = axios.get('http://127.0.0.1:5000/api/projects11111',{
-            validateStatus:function(status) {
-                //指定HTTP状态码的错误范围
-                return status<500;
-            }
-        })
-
-        pro.then(function(response){
-            //这个回调函数的中的response才是接口返回的对象
-            console.log('接口的响应数据：',response)
-            console.log(response.data)
-            console.log(response.data)
-        }) 
-        console.log('0000999999')
-
-
-
-
-    </script>
     
 </body>
 </html>
