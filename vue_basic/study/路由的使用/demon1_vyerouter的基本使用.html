@@ -6,17 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
-    引入vue
+    <!-- 引入vue -->
     <script src="/vue_basic/js/vue.js"></script>
 </head>
 <body>
     <div id="app">
+        <!-- 路由视图 -->
+        <router-view></router-view>
 
     </div>
     
     <script type="text/javascript">
+        /* 
+        第一步：定义展示页面内容的组件
+        第二步：定义路由的规则
+        第三步：初始化路由对象
+        第四步：绑定一个路由对象
+        第五步：在跟组件中定义路由展示的位置
+        */
+       
+        //首页
+        const home={
+            template: `
+            <h1>这个是项目的首页</h1>`
+        }
+
+        //登录页面  
+        const login={
+            template:`
+            <h1>这个是项目的首页</h1>
+            `  
+        }
+
+        //定义路由规则
+        
+
+        //创建一个路由对象 
+        const router =new VueRouter(
+             //通过路由route指定路由规则
+            { routes:[{
+                path:'/',
+                component:home
+            }]}
+           
+           
+        )
+
         var vm =new Vue({
             el:"#app",  
+            //将路由对象绑定到vue的实例中去
+            router:router 
         })
     </script>
     
